@@ -1,0 +1,29 @@
+# 应用服务 WEB 访问端口
+server:
+  port: 8080
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mapper/*.xml
+
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/shirodb
+    username: root
+    password: 123456
+
+  thymeleaf:
+    prefix: classpath:/templates/ #视图前缀
+    suffix: .html                 #视图后缀
+    encoding: UTF-8               #编码
+    cache: false                  #缓存(默认开启，开发时建议关闭)
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+shiro:
+  loginUrl: /myController/login
